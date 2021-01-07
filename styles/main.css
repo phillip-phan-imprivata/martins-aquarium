@@ -14,8 +14,23 @@ header ul {
 }
 
 header li {
-  display: inline;
-  padding-right: 10px;
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #fcedd8;
+  box-shadow: 0px 5px #323232;
+}
+
+header li:hover {
+  background-color: #f8d7a9;
+  transform: translateY(5px);
+  box-shadow: 0 0 0;
+}
+
+header a {
+  text-decoration: none;
 }
 
 .brand {
@@ -50,6 +65,7 @@ h2 {
   margin: 10px;
   border: 1px solid black;
   text-align: center;
+  border-radius: 5px;
 }
 
 .contentArticle {
@@ -65,6 +81,11 @@ h2 {
   margin: 15px;
   border: 1px dashed black;
   padding: 10px;
+}
+
+.fishCard:hover, 
+.quoteCard:hover, 
+.locationCard:hover {
   box-shadow: 0px 5px 10px;
 }
 
@@ -98,6 +119,10 @@ h2 {
   padding: 10px;
   margin: 10px;
   border: 1px dashed black;
+}
+
+.containerRight li:hover {
+  box-shadow: 0px 5px 10px;
 }
 
 footer {
