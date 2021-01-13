@@ -68,7 +68,9 @@ h2 {
   border-radius: 5px;
 }
 
-.contentArticle {
+.contentArticle__fish,
+.contentArticle__quotes,
+.contentArticle__locations {
   display: flex;
   justify-content: space-around;
   padding: 10px 5px;
@@ -89,9 +91,10 @@ h2 {
   box-shadow: 0px 5px 10px;
 }
 
-.fishCard img, 
+.fish__image, 
 .locationCard img{
   width: 200px;
+  height: 200px;
 }
 
 .quoteCard {
