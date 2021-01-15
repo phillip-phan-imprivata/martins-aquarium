@@ -1,27 +1,34 @@
-import { useFish } from "./FishDataProvider.js"
+import { mostHolyFish, nonHolyFish, soldierFish } from "./FishDataProvider.js"
 import { Fish } from "./Fish.js"
 
 export const FishList = () => {
 
     const contentElement = document.querySelector("#containerLeft__fishList")
-    const fishes = useFish()
+    const holyFishArr = mostHolyFish()
+    const soldierFishArr = soldierFish()
+    const nonHolyFishArr = nonHolyFish()
 
-    // Generate all of the HTML for all of the fish
-    let fishHTMLRepresentations = ""
-    for (const fish of fishes) {
-        /*
-            Invoke the Fish component function
-            and pass the current fish object as an argument.
-            Each time, add the return value to the
-            fishHTMLRepresentations variable with `+=`
-        */
-       fishHTMLRepresentations += Fish(fish)
+    let holyFishHTMLRepresentations = "<h3>Holy Fish</h3>"
+    for (const fish of holyFishArr) {
+       holyFishHTMLRepresentations += Fish(fish)
+    }
+
+    let soldierFishHTMLRepresentations = "<h3>Soldier Fish</h3>"
+    for (const fish of soldierFishArr) {
+       soldierFishHTMLRepresentations += Fish(fish)
+    }
+
+    let nonHolyFishHTMLRepresentations = "<h3>Non-Holy Fish</h3>"
+    for (const fish of nonHolyFishArr) {
+       nonHolyFishHTMLRepresentations += Fish(fish)
     }
 
     // Add a section, and all of the fish to the DOM
     contentElement.innerHTML += `
         <article class="contentArticle__fish">
-            ${fishHTMLRepresentations}
+            ${holyFishHTMLRepresentations}
+            ${soldierFishHTMLRepresentations}
+            ${nonHolyFishHTMLRepresentations}
         </article>
     `
 }
