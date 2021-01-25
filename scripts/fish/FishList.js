@@ -8,27 +8,12 @@ export const FishList = () => {
     const soldierFishArr = soldierFish()
     const nonHolyFishArr = nonHolyFish()
 
-    let holyFishHTMLRepresentations = "<h3>Holy Fish</h3>"
-    for (const fish of holyFishArr) {
-       holyFishHTMLRepresentations += Fish(fish)
-    }
-
-    let soldierFishHTMLRepresentations = "<h3>Soldier Fish</h3>"
-    for (const fish of soldierFishArr) {
-       soldierFishHTMLRepresentations += Fish(fish)
-    }
-
-    let nonHolyFishHTMLRepresentations = "<h3>Non-Holy Fish</h3>"
-    for (const fish of nonHolyFishArr) {
-       nonHolyFishHTMLRepresentations += Fish(fish)
-    }
-
     // Add a section, and all of the fish to the DOM
     contentElement.innerHTML += `
         <article class="contentArticle__fish">
-            ${holyFishHTMLRepresentations}
-            ${soldierFishHTMLRepresentations}
-            ${nonHolyFishHTMLRepresentations}
+            ${holyFishArr.map(fish => Fish(fish)).join("")}
+            ${soldierFishArr.map(fish => Fish(fish)).join("")}
+            ${nonHolyFishArr.map(fish => Fish(fish)).join("")}
         </article>
     `
 }
