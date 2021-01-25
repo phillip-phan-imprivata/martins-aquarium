@@ -6,14 +6,9 @@ export const LocationList = () => {
   const contentElement = document.querySelector("#containerLeft__travelLocations")
   const locations = useLocation()
 
-  let locationHTMLRepresentations = ""
-  for (const location of locations) {
-    locationHTMLRepresentations += Location(location)
-  }
-
   contentElement.innerHTML += `
       <article class="contentArticle__locations">
-        ${locationHTMLRepresentations}
+        ${locations.map(location => Location(location)).join("")}
       </article>
     `
 }
